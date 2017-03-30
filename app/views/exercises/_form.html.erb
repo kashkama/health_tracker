@@ -1,0 +1,9 @@
+<%= render "layouts/errors", :object => @exercise %>
+
+<%= form_for [@user,@exercise], remote: true do |f| %>
+  <%= f.label :exercise %>
+  <%= f.text_field :exercise%><br/>
+  <%= f.label :calories %>
+  <%= f.text_field :calories %><br/>
+  <%= f.submit %>
+<% end %>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<div class="container-fluid">
+
+  <table align="center">
+    <tr>
+      <th class="th-food-column"><%= link_to "Food"%></th>
+      <th class="th-calories-column"><%= link_to "Calories"%></th>
+    </tr>
+
+    <% for food in @foods do%>
+    <tr>
+      <td class="food-column"><%= food.food%></td>
+      <td class="calories-column"><%= food.calories%></td>
+    </tr>
+    <%end%>
+  </table>
+</div>

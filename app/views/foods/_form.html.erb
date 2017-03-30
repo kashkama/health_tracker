@@ -1,0 +1,9 @@
+<%= render "layouts/errors", :object => @food %>
+
+<%= form_for [@user,@food], remote: true do |f| %>
+  <%= f.label :food %>
+  <%= f.text_field :food %><br/>
+  <%= f.label :calories %>
+  <%= f.text_field :calories %><br/>
+  <%= f.submit %>
+<% end %>

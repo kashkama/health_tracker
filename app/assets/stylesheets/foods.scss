@@ -1,0 +1,32 @@
+// Place all the styles related to the Foods controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+// foodtable
+
+table {
+
+}
+.th-food-column,
+.th-exercise-column{
+  text-align: left;
+  width: 10em;
+  font-size: 17px;
+}
+.food-column,.exercise-column{
+  text-align: left;
+  width: 10em;
+  font-size: 12px;
+}
+
+.th-calories-column{
+  text-align: right;
+  width: 7em;
+  font-size: 17px;
+}
+.calories-column{
+  text-align: right;
+  width: 7em;
+  font-size: 12px;
+}

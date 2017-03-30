@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<div class="container">
+  <h5>Welcome <%= current_user.email%></h5>
+  <hr/>
+  <div class="col-md-6">
+    <h3 class="text-center">food</h3><hr/>
+    <div class="row" id="total-food-calories">
+      <h5 class="text-center">consumed cal</h5>
+      <h2 class="text-center"><%= current_user.food_total_calories%></h2><br/><hr/>
+    </div>
+    <div class="row text-center">
+      <%= link_to "Enter Food", new_user_food_path(current_user), id: "new_link", class:"btn btn-danger", remote: true %><br/><hr/>
+    </div>
+    <div class="row">
+      <%= render("/foods/foods")%>
+    </div>
+  </div>
+  <div class="col-md-6 verticalLine">
+    <h3 class="text-center">exercise</h3><hr/>
+    <div class="row" id="total-exercise-calories">
+      <h5 class="text-center">burned cal</h5>
+      <h2 class="text-center"><%= current_user.exercise_total_calories%></h2><br/><hr/>
+    </div>
+    <div class="row text-center">
+      <%= link_to "Exercises", new_user_exercise_path(current_user), id: "new_link_exercise", class:"btn btn-primary", remote: true %><br/><hr/>
+    </div>
+    <div class="row">
+      <%= render("/exercises/exercises")%>
+    </div>
+  </div>
+</div>
