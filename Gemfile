@@ -37,3 +37,4 @@ source 'https://rubygems.org'
 
   gem "paperclip", "~> 4.2"
   gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+  ruby "2.2.3"
