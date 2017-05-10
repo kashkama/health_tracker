@@ -1,7 +1,21 @@
 <!DOCTYPE html>
 
-<div class="container-fluid">
-  <h1>Health Tracker| <%= link_to "Signup",new_user_registration_path, class:"btn"%> |  <%= link_to "Login",new_user_session_path, class:"btn"%></h1>
-
-  <hr>
-</div>
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="intro-header">
+  <div class="row">
+    <div class="row intro">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="info">
+          <h2 class="text-center">Health Tracker</h2>
+          <p class="text-center">Re energize your life</p>
+          <hr>
+          <p class="text-center">Health Tracker helps keep track of your daily life diet and exercise</p>
+          <div class="text-center">
+           <%= link_to "Free Signup",new_user_registration_path, class:"btn btn-primary"%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

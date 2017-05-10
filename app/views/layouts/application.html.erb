@@ -3,22 +3,72 @@
   <head>
     <title>HealthTracker</title>
     <%= csrf_meta_tags %>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=PT+Mono" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <div class="row userheader">
-      <% if user_signed_in? %>
-        <li>
-        <%= link_to('Logout', destroy_user_session_path, class:"btn", :method => :delete) %>
-        </li>
-      <% end %>
-    </div>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <div class="row">
 
-    <%= yield %>
-  </body>
+      <!-- Navigation -->
+      <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              Menu
+              <i class="fa fa-bars"></i>
+            </button>
+          <a class="navbar-brand" <%= link_to "Health Tracker", root_path%></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <%= link_to "Signup",new_user_registration_path, class:"btn"%>
+            </li>
+            <li>
+              <%= link_to "Login",new_user_session_path, class:"btn"%>
+            </li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container -->
+    </nav>
+  </div>
+  <div class="row userheader">
+    <% if user_signed_in? %>
+    <li>
+      <%= link_to('Logout', destroy_user_session_path, class:"btn", :method => :delete) %>
+    </li>
+    <% end %>
+  </div>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
+  <%= yield %>
+  <div class="row">
+    <div class="container">
+      <div class="text-center center-block">
+        <p class="txt-railway">- Find Us -</p>
+        <br/>
+        <a href="https://www.facebook.com/owenx.kash">
+          <i class="fa fa-facebook-square fa-3x social"></i>
+        </a>
+        <a href="https://github.com/kashkama">
+          <i class="fa fa-github-square fa-3x social"></i>
+        </a>
+        <a href="https://gmail.com">
+          <i class="fa fa-envelope-square fa-3x social"></i>
+        </a>
+      </div>
+      <hr/>
+    </div>
+  </div>
+</body>
 </html>
