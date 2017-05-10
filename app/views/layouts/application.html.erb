@@ -28,13 +28,25 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
+            <% if user_signed_in? %>
+
+            <!-- user profile -->
+            <!-- sign out -->
+            <li>
+              <%=link_to "sign out", destroy_user_session_path, method: :delete%>
+            </li>
+          <% else %>
+            <!-- signUp -->
             <li>
               <%= link_to "Signup",new_user_registration_path, class:"btn"%>
             </li>
+            <!-- SignIn -->
             <li>
               <%= link_to "Login",new_user_session_path, class:"btn"%>
             </li>
+            <% end %>
           </ul>
+
         </div>
         <!-- /.navbar-collapse -->
       </div>
@@ -48,10 +60,11 @@
     </li>
     <% end %>
   </div>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-
-  <%= yield %>
+  <div class="row">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= yield %>
+  </div>
   <div class="row">
     <div class="container">
       <div class="text-center center-block">
